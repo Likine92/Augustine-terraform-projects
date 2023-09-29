@@ -1,5 +1,5 @@
-resource "aws_instance" "HelloWorld" {
-  ami                         = data.aws_ami.amazn-linux2.id
+resource "aws_instance" "Augustine-server" {
+  ami                         = "ami-0bb4c991fa89d4b9b"
   instance_type               = var.instanceType #"t2.micro"
   key_name                    = aws_key_pair.test-key.key_name     #"terraform-key"
   subnet_id                   = var.subnetId       //aws_subnet.augustine-subnet.id

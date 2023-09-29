@@ -1,5 +1,5 @@
 resource "aws_security_group" "augustine1-sg" {
-  name        = "augustine1-sg"
+  name = var.sgName
   description = "Allow HTTPS and SSH inbound traffic"
   vpc_id      = var.vpcID   //aws_vpc.augustine-vpc.id
 

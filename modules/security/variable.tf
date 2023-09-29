@@ -1,3 +1,7 @@
 variable "vpcID" {
   
 }
+
+variable "sgName" {
+  
+}

@@ -11,8 +11,15 @@ module "network" {
 module "Augustine-sg" {
     source = "./modules/security"
     vpcID = module.network.vpcID
+    sgName = "Augustine-sg"
+}
+module "joshua" {
+    source = "./modules/security"
+    vpcID = module.network.vpcID
+    sgName = "Joshua"
   
 }
+  
 
 
 
