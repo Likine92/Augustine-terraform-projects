@@ -6,6 +6,7 @@ module "Augstine-server" {
 
 module "network" {
     source = "./modules/network"
+    name = "Augustine"
 }
 
 module "Augustine-sg" {
@@ -18,6 +19,12 @@ module "joshua" {
     vpcID = module.network.vpcID
     sgName = "Joshua"
   
+}
+
+module "Augustine-vpc" {
+  source = "./modules/network"
+  vpc-cidr = "10.10.0.0/16"
+  name = "Augustine"
 }
   
 

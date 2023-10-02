@@ -5,7 +5,7 @@ resource "aws_vpc" "augustine-vpc" {
   enable_dns_support   = true
 
   tags = {
-    Name = "augustine-vpc"
+    Name = "vpc-${var.name}"
   }
 }
 
