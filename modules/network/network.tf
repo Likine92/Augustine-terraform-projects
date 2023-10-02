@@ -1,4 +1,5 @@
-/*resource "aws_vpc" "augustine-vpc" {
+
+resource "aws_vpc" "augustine-vpc" {
   cidr_block           = var.vpc-cidr #"10.0.0.0/16"
   instance_tenancy     = "default"
   enable_dns_hostnames = true
@@ -12,7 +13,7 @@
 
 resource "aws_subnet" "augustine-subnet" {
   vpc_id                  = aws_vpc.augustine-vpc.id
-  cidr_block              = "10.0.1.0/24"
+  cidr_block              = "10.0.0.0/24"
   availability_zone       = var.avZone #us-east-1a
   map_public_ip_on_launch = true
 
@@ -48,4 +49,4 @@ resource "aws_route_table_association" "a" {
   subnet_id      = aws_subnet.augustine-subnet.id
   route_table_id = aws_route_table.augustine-igw.id
 }
-*/
+
