@@ -1,4 +1,4 @@
-resource "aws_vpc" "augustine-vpc" {
+/*resource "aws_vpc" "augustine-vpc" {
   cidr_block           = var.vpc-cidr #"10.0.0.0/16"
   instance_tenancy     = "default"
   enable_dns_hostnames = true
@@ -48,3 +48,4 @@ resource "aws_route_table_association" "a" {
   subnet_id      = aws_subnet.augustine-subnet.id
   route_table_id = aws_route_table.augustine-igw.id
 }
+*/
