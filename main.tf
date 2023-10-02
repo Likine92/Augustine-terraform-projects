@@ -1,3 +1,5 @@
+/*
+
 module "Augstine-server" {
     source = "./modules/ec2"
     subnetId = module.network.subnetID
@@ -25,6 +27,30 @@ module "Augustine-vpc" {
   source = "./modules/network"
   vpc-cidr = "10.10.0.0/16"
   name = "Augustine"
+}
+
+*/
+
+module "test-vpc" {
+  source = "terraform-aws-modules/vpc/aws"
+  cidr = "10.20.0.0/16"
+  name = "test-vpc"
+  azs  =  ["us-east-1a", "us-east-1b"]
+  public_subnets = ["10.20.0.0/24"]
+  private_subnets = ["10.20.1.0/24"]
+  tags = {
+    Terraform = "true"
+    Environment = "dev"
+  }
+}
+
+module "my-augustine-s3" {
+    source = "terraform-aws-modules/s3-bucket/aws"
+    bucket = "my-augustine-s3-bucket"
+    tags = {
+        env = "prod"
+        owner = "Augustine"  
+    }
 }
   
 
